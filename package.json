@@ -1,6 +1,6 @@
 {
-  "name": "@love-rose/eslint-config-vue-prettier-airbnb",
-  "version": "0.0.1",
+  "name": "eslint-config-vue-prettier-airbnb-ro",
+  "version": "0.0.2",
   "description": "A set of eslint specification plugins customized based on airbnb standards",
   "main": "index.js",
   "scripts": {

@@ -18,14 +18,14 @@ The config is based on `eslint-config-airbnb-base` and `eslint-plugin-vue` and `
 Then, add this to your .eslintrc file:
 
 ```shell
-npm install @loverosen/eslint-config-vue-prettier-airbnb --save-dev
+npm install eslint-config-vue-prettier-airbnb-ro --save-dev
 ```
 
 _.eslintrc.js:_
 
 ```javascript
 module.exports = {
-  extends: ['@loverosen/eslint-config-vue-prettier-airbnb'],
+  extends: ['eslint-config-vue-prettier-airbnb-ro'],
 };
 ```
 
@@ -39,10 +39,7 @@ _.eslintrc.js:_
 
 ```javascript
 module.exports = {
-  extends: [
-    '@loverosen/eslint-config-vue-prettier-airbnb',
-    '@loverosen/eslint-config-vue-prettier-airbnb/ts',
-  ],
+  extends: ['eslint-config-vue-prettier-airbnb-ro', 'eslint-config-vue-prettier-airbnb-ro/ts'],
 };
 ```
 
