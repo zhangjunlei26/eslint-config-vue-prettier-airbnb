@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-vue-prettier-airbnb-ro",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A set of eslint specification plugins customized based on airbnb standards",
   "main": "index.js",
   "scripts": {
@@ -43,9 +43,10 @@
   },
   "homepage": "https://github.com/zhangjunlei26/eeslint-config-vue-prettier-airbnb#readme",
   "dependencies": {
-    "@vue/eslint-config-airbnb": "^5.1.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
     "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
