@@ -1,0 +1,107 @@
+{
+  "name": "@love-rose/eslint-config-vue-prettier-airbnb",
+  "version": "0.0.1",
+  "description": "A set of eslint specification plugins customized based on airbnb standards",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "run-p dev:eslintrc dev:site",
+    "dev:eslintrc": "nodemon",
+    "dev:site": "parcel site/index.html --out-dir .cache",
+    "build": "run-s build:eslintrc build:site",
+    "build:eslintrc": "ts-node scripts/build.ts",
+    "build:site": "run-s clear:dist build:html",
+    "clear:dist": "rimraf ./dist",
+    "build:html": "parcel build site/index.html --public-url ./",
+    "test": "npm run lint && ts-node ./test/index.ts",
+    "test:rulesCoverage": "ts-node ./scripts/rulesCoverage.ts",
+    "lint": "run-s eslint markdownlint",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
+    "markdownlint": "markdownlint --config ./.markdownlintrc.json README.md",
+    "autotag": "node ./scripts/autoTag.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangjunlei26/eslint-config-vue-prettier-airbnb.git"
+  },
+  "keywords": [
+    "prettier",
+    "eslint",
+    "eslintrc",
+    "eslintconfig",
+    "config",
+    "javascript",
+    "styleguide",
+    "react",
+    "vue",
+    "typescript"
+  ],
+  "author": "zhangjunlei26@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhangjunlei26/eslint-config-vue-prettier-airbnb/issues"
+  },
+  "homepage": "https://github.com/zhangjunlei26/eeslint-config-vue-prettier-airbnb#readme",
+  "dependencies": {
+    "@vue/eslint-config-airbnb": "^5.1.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.1.1",
+    "vue-eslint-parser": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.4.0",
+    "@types/doctrine": "0.0.3",
+    "@types/eslint": "^7.2.2",
+    "@types/node": "^14.10.0",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-tooltip": "^4.2.4",
+    "@types/rimraf": "^3.0.0",
+    "@types/xml-escape": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "cookie": "^0.4.1",
+    "doctrine": "^3.0.0",
+    "eslint": "^7.8.1",
+    "insert-tag": "^0.1.2",
+    "markdownlint-cli": "^0.23.2",
+    "mobi-plugin-color": "^1.0.0",
+    "mobi.css": "^3.1.1",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-tooltip": "^4.2.9",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.1.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2",
+    "xml-escape": "^1.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "^7.8.1"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
