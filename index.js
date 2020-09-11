@@ -1,7 +1,6 @@
 const { NODE_ENV } = process.env;
 
 module.exports = {
-  root: true,
   parserOptions: {
     parser: 'babel-eslint', // class properties
     ecmaVersion: 2020,
