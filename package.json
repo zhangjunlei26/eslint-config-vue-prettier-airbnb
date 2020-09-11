@@ -13,7 +13,7 @@
     "build:site": "run-s clear:dist build:html",
     "clear:dist": "rimraf ./dist",
     "build:html": "parcel build site/index.html --public-url ./",
-    "test": "npm run lint && ts-node ./test/index.ts",
+    "test": "npm run lint && ts-node ./lib/ts.js",
     "test:rulesCoverage": "ts-node ./scripts/rulesCoverage.ts",
     "lint": "run-s eslint markdownlint",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
